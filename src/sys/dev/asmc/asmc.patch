@@ -1,0 +1,44 @@
+diff --git sys/dev/asmc/asmc.c sys/dev/asmc/asmc.c
+index cd13fba72e9..07199b2c5b7 100644
+--- sys/dev/asmc/asmc.c
++++ sys/dev/asmc/asmc.c
+@@ -279,6 +279,13 @@ static const struct asmc_model asmc_models[] = {
+ 	 ASMC_MBP113_TEMPS, ASMC_MBP113_TEMPNAMES, ASMC_MBP113_TEMPDESCS
+ 	},
+ 
++	/* MacBookPro12,1 Apple SMC MacBook Pro (Retina, 13-inch, Early 2015) */
++	{
++          "MacBookPro12,1", "Apple SMC MacBook Pro (Retina, 13-inch, Early 2015)",
++	 ASMC_SMS_FUNCS_DISABLED, ASMC_FAN_FUNCS2, ASMC_LIGHT_FUNCS,
++	 ASMC_MBP121_TEMPS, ASMC_MBP121_TEMPNAMES, ASMC_MBP121_TEMPDESCS
++	},
++
+ 	/* The Mac Mini has no SMS */
+ 	{
+ 	 "Macmini1,1", "Apple SMC Mac Mini",
+diff --git sys/dev/asmc/asmcvar.h sys/dev/asmc/asmcvar.h
+index 42e3120ff4f..4bb3621dac5 100644
+--- sys/dev/asmc/asmcvar.h
++++ sys/dev/asmc/asmcvar.h
+@@ -432,6 +432,21 @@ struct asmc_softc {
+ 				 "TM0S", "TP0P", "TPCD", "TW0P", "Ta0P", \
+ 				 "TaSP", "Th1H", "Th2H", "Ts0P", "Ts0S", \
+ 				 "Ts1S" }
++
++/* NOTE: Added by me: */
++#define ASMC_MBP121_TEMPS    { "TB0T", "TB1T", "TB2T", "TA0P", "TC0C", \
++                                  "TC0P", "TC1C", "Th1H", "THSP", "TM0P", \
++                                  "TPCD", "Ts0P", "Ts1P", "Tw0P", NULL }
++
++#define ASMC_MBP121_TEMPNAMES    { "TB0T", "TB1T", "TB2T", "TA0P", "TC0C", \
++                                  "TC0P", "TC1C", "Th1H", "THSP", "TM0P", \
++                                  "TPCD", "Ts0P", "Ts1P", "Tw0P", NULL }
++
++#define ASMC_MBP121_TEMPDESCS    { "TB0T", "TB1T", "TB2T", "TA0P", "TC0C", \
++                                  "TC0P", "TC1C", "Th1H", "THSP", "TM0P", \
++                                  "TPCD", "Ts0P", "Ts1P", "Tw0P", NULL }
++/* NOTED: Added by me END */
++
+ #define ASMC_MM_TEMPS		{ "TN0P", "TN1P", NULL }
+ #define ASMC_MM_TEMPNAMES	{ "northbridge1", "northbridge2" }
+ #define ASMC_MM_TEMPDESCS	{ "Northbridge Point 1", \

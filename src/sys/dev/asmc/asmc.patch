@@ -17,7 +17,7 @@ index cd13fba72e9..07199b2c5b7 100644
  	{
  	 "Macmini1,1", "Apple SMC Mac Mini",
 diff --git sys/dev/asmc/asmcvar.h sys/dev/asmc/asmcvar.h
-index 42e3120ff4f..4bb3621dac5 100644
+index 42e3120ff4f..e171e6c2d9e 100644
 --- sys/dev/asmc/asmcvar.h
 +++ sys/dev/asmc/asmcvar.h
 @@ -432,6 +432,21 @@ struct asmc_softc {
@@ -25,7 +25,7 @@ index 42e3120ff4f..4bb3621dac5 100644
  				 "TaSP", "Th1H", "Th2H", "Ts0P", "Ts0S", \
  				 "Ts1S" }
 +
-+/* NOTE: Added by me: */
++/* MacBookPro12,1 Apple SMC MacBook Pro (Retina, 13-inch, Early 2015 */
 +#define ASMC_MBP121_TEMPS    { "TB0T", "TB1T", "TB2T", "TA0P", "TC0C", \
 +                                  "TC0P", "TC1C", "Th1H", "THSP", "TM0P", \
 +                                  "TPCD", "Ts0P", "Ts1P", "Tw0P", NULL }
@@ -37,7 +37,7 @@ index 42e3120ff4f..4bb3621dac5 100644
 +#define ASMC_MBP121_TEMPDESCS    { "TB0T", "TB1T", "TB2T", "TA0P", "TC0C", \
 +                                  "TC0P", "TC1C", "Th1H", "THSP", "TM0P", \
 +                                  "TPCD", "Ts0P", "Ts1P", "Tw0P", NULL }
-+/* NOTED: Added by me END */
++/* MacBookPro12,1 Apple SMC MacBook Pro (Retina, 13-inch, Early 2015 */
 +
  #define ASMC_MM_TEMPS		{ "TN0P", "TN1P", NULL }
  #define ASMC_MM_TEMPNAMES	{ "northbridge1", "northbridge2" }
